@@ -63,7 +63,12 @@ void display(){
 }
 void peek(){
     stack* ptr = start;
-    cout<<"Top of the stack is: "<<ptr->data<<endl;
+    if(start!=NULL){
+        cout<<"Top of the stack is: "<<ptr->data<<endl;
+    }
+    else{
+        cout<<"Empty stack!"<<endl;
+    }
 }
 int main(){
     int flag = 0;
