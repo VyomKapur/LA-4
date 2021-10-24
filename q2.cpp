@@ -7,20 +7,18 @@ struct stack{
 };
 struct stack* start = NULL;
 
-void reverse(){
-
-}
-void push(string str){
-    stack* ptr = start;
-    for(int i = 0; i<str.length();i++){
-        
-    }
+void push(char a){
+    struct stack* new_node;
+    new_node = new stack;
+    new_node->data = a;
+    new_node->next = start;
+    start = new_node;
 }
 void display(){
     stack* ptr = start;
-    cout<<"TOP OF STACK->";
+    cout<<"Reversed word is: ";
     while(ptr!=NULL){
-        cout<<ptr->data<<"->";
+        cout<<ptr->data;
         ptr = ptr->next;
     }
 }
@@ -28,7 +26,10 @@ int main(){
     string str; 
     int flag = 0;
     cout<<"Enter string: ";
-    cin>>str;
-    int n = str.length();
-    
+    getline(cin, str);
+    for (int i; i < str.length(); i++)
+    {
+        push(str[i]);
+    }
+    display();
 }
